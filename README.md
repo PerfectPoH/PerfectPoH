@@ -59,15 +59,6 @@ Research prototype for automated cephalometric landmark detection from radiograp
  
 ---
  
-### 📊 Stats
- 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=PerfectPoH&show_icons=true&theme=dark&hide_border=true&include_all_commits=true" height="150"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PerfectPoH&layout=compact&theme=dark&hide_border=true" height="150"/>
-</p>
----
- 
-<p align="center">
-  📍 Cremona, Italy &nbsp;·&nbsp;
-  🎓 Politecnico di Milano
+  📍 Cremona, Italy &nbsp;·&nbsp; 🎓 Politecnico di Milano
 </p>
