@@ -1,64 +1,110 @@
-<h1 align="center">Hi, I'm PerfectPoH 👋</h1>
- 
+<h1 align="center">Hi, I'm Abed Barakat</h1>
+
 <p align="center">
-  CS student · Politecnico di Milano · ML, finance & systems
+  Computer Science student at Politecnico di Milano.<br/>
+  I build research systems, data-heavy tools, and full-stack applications.
 </p>
+
 ---
- 
-### About me
- 
-First-year *Ingegneria Informatica* student at **Politecnico di Milano** (Cremona campus). I'm interested in machine learning, quantitative methods, and high-performance computing. Working toward a magistrale in HPC and a career in international tech.
- 
-I build things end-to-end — from reproducible ML research pipelines to full-stack web apps deployed in production.
- 
+
+## What I am building toward
+
+I am interested in the intersection of:
+
+- machine learning systems,
+- quantitative research infrastructure,
+- data validation and reproducibility,
+- high-performance computing,
+- full-stack products that real people can use.
+
+My current focus is learning how to build software that does not just produce
+nice-looking results, but can also explain where those results came from and
+why they should or should not be trusted.
+
 ---
- 
-### 🛠 Tech Stack
- 
-**Languages**
- 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white)
- 
-**Frameworks & Tools**
- 
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
-![pandas](https://img.shields.io/badge/pandas-150458?style=flat&logo=pandas&logoColor=white)
- 
+
+## Flagship project
+
+### [Adaptive Equity Trading Lab](https://github.com/PerfectPoH/adaptive-equity-trading-lab)
+
+A research infrastructure for falsifiable equity-strategy experiments.
+
+This is not a trading bot and not a promoted strategy. It is a lab for testing
+whether strategy ideas survive data-quality checks, transaction costs,
+out-of-sample validation, robustness gates, provider constraints, and an audit
+trail.
+
+The project includes:
+
+- governed pre-run gates before provider queries or backtests,
+- decision ledgers and vault reports for every research outcome,
+- outlier-dependency and cost-realism gates,
+- regime-aware portfolio diagnostics,
+- Streamlit dashboards for inspecting strategies, blockers, and results,
+- a frozen monthly replication protocol for the remaining active hypothesis.
+
+**Main lesson:** the lab has promoted zero strategies so far, which is exactly
+the point. It is built to reject weak evidence before it becomes a trading
+claim.
+
+`Python` | `pandas` | `scikit-learn` | `Streamlit` | `time series` |
+`quantitative research`
+
 ---
- 
-### 📌 Featured Projects
- 
-**[🔬 Adaptive Equity Trading Lab](https://github.com/PerfectPoH/adaptive-equity-trading-lab)**
-Reproducible ML research pipeline for US equity signal generation. Covers data ingestion with point-in-time feature engineering, model training (Logistic Regression / Random Forest with isotonic calibration), and backtesting with slippage, commissions, and walk-forward validation. Results visualized in a Streamlit dashboard.
-`Python` · `scikit-learn` · `yfinance` · `Streamlit` · `pandas`
- 
+
+## Other projects
+
+### [Soresina Mercati](https://github.com/PerfectPoH/soresina-mercati)
+
+Full-stack web application for market stall booking and event management,
+built for Pro Loco Soresina and deployed in production.
+
+`Next.js` | `Supabase` | `TypeScript` | `PostgreSQL`
+
+### [Cephalometric Landmark Detector](https://github.com/PerfectPoH/cephalometric-landmark-detector)
+
+Computer-vision research prototype for detecting cephalometric landmarks from
+radiographic/profile images.
+
+`C#` | `EmguCV` | `OpenCV` | `image processing`
+
+### [Java Chess RMI](https://github.com/PerfectPoH/java-chess-rmi)
+
+Multiplayer chess application with Java RMI synchronization, legal move
+highlighting, turn handling, check/checkmate detection, and castling support.
+
+`Java` | `Swing` | `RMI`
+
+### [TypeHard Typing Trainer](https://github.com/PerfectPoH/typehard-typing-trainer)
+
+Java Swing typing trainer with accounts, timed challenges, scoring, difficulty
+modes, and leaderboard screens over a socket-based protocol.
+
+`Java` | `Swing` | `sockets`
+
 ---
- 
-**[🗺 Soresina Mercati](https://github.com/PerfectPoH/soresina-mercati)**
-Full-stack web application for market stall booking and event management, built for Pro Loco Soresina. Features authentication, an admin dashboard, and Supabase RLS policies. Validated with the local municipality and deployed to production.
-`Next.js 14` · `Supabase` · `TypeScript`
- 
+
+## Stack
+
+**Languages:** Python, Java, TypeScript, JavaScript, C#, C
+
+**Data / ML:** pandas, scikit-learn, time-series validation, Streamlit
+
+**Web:** Next.js, Supabase, PostgreSQL, REST APIs
+
+**Systems:** Git, testing, experiment logging, reproducible pipelines
+
 ---
- 
-**[♟ Java Chess RMI](https://github.com/PerfectPoH/java-chess-rmi)**
-Multiplayer chess application with Java RMI network synchronization, full piece movement rules, legal move highlighting, and check/checkmate/castling detection.
-`Java` · `Swing` · `RMI`
- 
----
- 
-**[🩻 Cephalometric Landmark Detector](https://github.com/PerfectPoH/cephalometric-landmark-detector)**
-Research prototype for automated cephalometric landmark detection from radiographic images using computer vision.
-`C#` · `EmguCV`
- 
----
- 
+
+## Direction
+
+I am using my first years of university to build a foundation in computer
+science while turning serious personal projects into public case studies.
+
+The long-term goal is to work on technically demanding systems: research
+infrastructure, ML tooling, high-performance software, and products where
+correctness matters.
+
 <p align="center">
-  📍 Cremona, Italy &nbsp;·&nbsp; 🎓 Politecnico di Milano
+  Cremona, Italy | Politecnico di Milano
 </p>
