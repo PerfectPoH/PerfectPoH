@@ -5,6 +5,10 @@
   I build research systems, data-heavy tools, and full-stack applications.
 </p>
 
+<p align="center">
+  <b>Open to internships</b> · <a href="https://abedbarakat.me">abedbarakat.me</a> · <a href="https://lab.abedbarakat.me">live demo</a> · <a href="mailto:abed@abedbarakat.me">abed@abedbarakat.me</a>
+</p>
+
 ---
 
 ## What I am building toward
@@ -106,5 +110,5 @@ infrastructure, ML tooling, high-performance software, and products where
 correctness matters.
 
 <p align="center">
-  Cremona, Italy | Politecnico di Milano
+  Crema, Italy | Politecnico di Milano
 </p>
