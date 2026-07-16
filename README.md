@@ -1,5 +1,9 @@
 <div align="center">
-  <img src="assets/ascii-portrait.gif" width="630" alt="Animated green ASCII portrait of Abed Barakat" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/ascii-portrait-dark.gif" />
+    <source media="(prefers-color-scheme: light)" srcset="assets/ascii-portrait-light.gif" />
+    <img src="assets/ascii-portrait-light.gif" width="630" alt="Animated ASCII portrait of Abed Barakat" />
+  </picture>
 </div>
 
 <h1 align="center">Hi, I'm Abed Barakat</h1>

@@ -44,6 +44,12 @@ def parse_args() -> argparse.Namespace:
         default=Path("assets/ascii-portrait.gif"),
         help="Destination GIF (default: assets/ascii-portrait.gif)",
     )
+    parser.add_argument(
+        "--theme",
+        choices=("solid-dark", "transparent-dark", "transparent-light"),
+        default="solid-dark",
+        help="Canvas and character palette (default: solid-dark)",
+    )
     parser.add_argument("--columns", type=int, default=90)
     parser.add_argument("--frames", type=int, default=20)
     parser.add_argument("--duration", type=int, default=90, help="Milliseconds/frame")
@@ -143,8 +149,25 @@ def choose_character(level: int, column: int, row: int, frame: int, seed: int) -
     return pool[index]
 
 
-def character_color(value: int, edge: int, scanline: bool, accent: bool) -> tuple[int, int, int]:
+def character_color(
+    value: int,
+    edge: int,
+    scanline: bool,
+    accent: bool,
+    theme: str,
+) -> tuple[int, int, int]:
     intensity = max(0.0, min(1.0, value / 255))
+
+    if theme == "transparent-light":
+        shade = round(128 - 116 * intensity)
+        if edge > 80:
+            shade = max(5, shade - 14)
+        if scanline:
+            shade = max(0, shade - 24)
+        if accent:
+            shade = 0
+        return shade, shade, min(255, shade + 4)
+
     red = round(5 + 52 * intensity)
     green = round(30 + 225 * intensity)
     blue = round(18 + 92 * intensity)
@@ -167,6 +190,7 @@ def render_frames(
     columns: int,
     frame_count: int,
     seed: int,
+    theme: str,
 ) -> list[Image.Image]:
     cell_width = max(1, math.ceil(font.getlength("M")))
     font_box = font.getbbox("Ag")
@@ -177,13 +201,18 @@ def render_frames(
     rows = max(1, round(columns * cell_width / (cell_height * crop_aspect)))
     canvas_size = (columns * cell_width, rows * cell_height)
     luminance, edge_strength = prepare_luminance(image, columns, rows)
+    transparent = theme != "solid-dark"
+    transparency_key = (255, 0, 255)
 
     frames: list[Image.Image] = []
     for frame in range(frame_count):
-        sharp = Image.new("RGB", canvas_size, (1, 7, 4))
+        canvas_color = (0, 0, 0) if transparent else (1, 7, 4)
+        sharp = Image.new("RGB", canvas_size, canvas_color)
         glow = Image.new("RGB", canvas_size, (0, 0, 0))
+        glyph_mask = Image.new("L", canvas_size, 0)
         sharp_draw = ImageDraw.Draw(sharp)
         glow_draw = ImageDraw.Draw(glow)
+        mask_draw = ImageDraw.Draw(glyph_mask)
         scan_row = round((frame / frame_count) * (rows + 8)) - 4
 
         # Short-lived horizontal offsets create a restrained terminal glitch.
@@ -207,7 +236,11 @@ def render_frames(
                     if flicker % 190:
                         continue
                     character = "01"[(flicker >> 8) & 1]
-                    color = (3, 38 + flicker % 24, 22)
+                    if theme == "transparent-light":
+                        shade = 168 + flicker % 25
+                        color = (shade, shade, shade)
+                    else:
+                        color = (3, 38 + flicker % 24, 22)
                 else:
                     value = max(0, min(255, value + (flicker % 15) - 7))
                     level = min(
@@ -219,12 +252,16 @@ def render_frames(
                         continue
                     is_scanline = abs(row - scan_row) <= 1
                     is_accent = value > 120 and flicker % 181 == 0
-                    color = character_color(value, edge, is_scanline, is_accent)
+                    color = character_color(
+                        value, edge, is_scanline, is_accent, theme
+                    )
 
                 x = column * cell_width
                 y = row * cell_height - glyph_top + 1
                 sharp_draw.text((x, y), character, font=font, fill=color)
-                if color[1] > 145:
+                if transparent:
+                    mask_draw.text((x, y), character, font=font, fill=255)
+                elif color[1] > 145:
                     glow_draw.text(
                         (x, y),
                         character,
@@ -232,12 +269,22 @@ def render_frames(
                         fill=(color[0] // 4, color[1] // 3, color[2] // 3),
                     )
 
-        blurred = glow.filter(ImageFilter.GaussianBlur(radius=1.7))
-        frames.append(ImageChops.screen(sharp, blurred))
+        if transparent:
+            binary_mask = glyph_mask.point(lambda alpha: 255 if alpha >= 80 else 0)
+            key_layer = Image.new("RGB", canvas_size, transparency_key)
+            frames.append(Image.composite(sharp, key_layer, binary_mask))
+        else:
+            blurred = glow.filter(ImageFilter.GaussianBlur(radius=1.7))
+            frames.append(ImageChops.screen(sharp, blurred))
     return frames
 
 
-def save_gif(frames: list[Image.Image], output: Path, duration: int) -> None:
+def save_gif(
+    frames: list[Image.Image],
+    output: Path,
+    duration: int,
+    transparent: bool,
+) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     palette = frames[0].quantize(
         colors=64,
@@ -248,15 +295,27 @@ def save_gif(frames: list[Image.Image], output: Path, duration: int) -> None:
     paletted.extend(
         frame.quantize(palette=palette, dither=Image.Dither.NONE) for frame in frames[1:]
     )
-    paletted[0].save(
-        output,
-        save_all=True,
-        append_images=paletted[1:],
-        duration=duration,
-        loop=0,
-        disposal=2,
-        optimize=True,
-    )
+    save_options: dict[str, object] = {
+        "save_all": True,
+        "append_images": paletted[1:],
+        "duration": duration,
+        "loop": 0,
+        "disposal": 2,
+        "optimize": not transparent,
+    }
+    if transparent:
+        palette_data = palette.getpalette()
+        key_index = min(
+            range(len(palette_data) // 3),
+            key=lambda index: (
+                (palette_data[index * 3] - 255) ** 2
+                + palette_data[index * 3 + 1] ** 2
+                + (palette_data[index * 3 + 2] - 255) ** 2
+            ),
+        )
+        save_options["transparency"] = key_index
+        save_options["background"] = key_index
+    paletted[0].save(output, **save_options)
 
 
 def main() -> None:
@@ -267,11 +326,18 @@ def main() -> None:
     source = ImageOps.exif_transpose(Image.open(args.input)).convert("RGB")
     crop = square_crop(source, args.focus_y, args.zoom)
     font = find_monospace_font(args.font, args.font_size)
-    frames = render_frames(crop, font, args.columns, args.frames, args.seed)
-    save_gif(frames, args.output, args.duration)
+    frames = render_frames(
+        crop, font, args.columns, args.frames, args.seed, args.theme
+    )
+    save_gif(
+        frames,
+        args.output,
+        args.duration,
+        transparent=args.theme != "solid-dark",
+    )
     print(
         f"Wrote {args.output} ({frames[0].width}x{frames[0].height}, "
-        f"{len(frames)} frames)"
+        f"{len(frames)} frames, {args.theme})"
     )
 
 
