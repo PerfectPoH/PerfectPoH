@@ -2,114 +2,45 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/ascii-portrait-dark.gif" />
     <source media="(prefers-color-scheme: light)" srcset="assets/ascii-portrait-light.gif" />
-    <img src="assets/ascii-portrait-light.gif" width="630" alt="Animated ASCII portrait of Abed Barakat" />
+    <img src="assets/ascii-portrait-light.gif" width="600" alt="Animated ASCII portrait of Abed Barakat" />
   </picture>
 </div>
 
-<h1 align="center">Hi, I'm Abed Barakat</h1>
+<h1 align="center">Abed Alrahman Barakat</h1>
 
 <p align="center">
-  Computer Science student at Politecnico di Milano.<br/>
-  I build research systems, data-heavy tools, and full-stack applications.
+  Computer Engineering student at Politecnico di Milano · Freelance software developer
 </p>
 
 <p align="center">
-  <b>Open to internships</b> · <a href="https://abedbarakat.me">abedbarakat.me</a> · <a href="https://lab.abedbarakat.me">live demo</a> · <a href="mailto:abed@abedbarakat.me">abed@abedbarakat.me</a>
+  <a href="https://abedbarakat.me">Portfolio</a> ·
+  <a href="https://www.linkedin.com/in/abed-alrahman-barakat-16aa593ba">LinkedIn</a> ·
+  <a href="mailto:abed@abedbarakat.me">Email</a>
 </p>
 
----
+```text
+abed@portfolio:~$ whoami
+  education    Politecnico di Milano · Cremona campus
+  current      Freelance software development · Outside Format
+  interests    Computer vision, data systems, software engineering
+  milestone    Milano Agentic City Hackathon · Finalist, 2026
+  available    Summer 2027 internships
+```
 
-## What I am building toward
+## `~/projects` · Selected work
 
-I am interested in the intersection of:
+| Project | What I built | Stack |
+| :-- | :-- | :-- |
+| **[Adaptive Equity Trading Lab](https://github.com/PerfectPoH/adaptive-equity-trading-lab)** · [Demo](https://lab.abedbarakat.me) | Research infrastructure for testing equity hypotheses with data-quality gates, out-of-sample validation, transaction costs and an audit trail. | Python · pandas · scikit-learn · Streamlit |
+| **[Soresina Mercati](https://github.com/PerfectPoH/soresina-mercati)** | Market-stall booking platform for Pro Loco Soresina, with an interactive map, waitlists and an admin dashboard. | Next.js · TypeScript · Supabase · PostgreSQL |
+| **Dental software** | Client work on cephalometric image analysis, dental 3D model processing and appointment API integration. | Computer vision · 3D workflows · REST APIs |
+| **[Java Chess RMI](https://github.com/PerfectPoH/java-chess-rmi)** | Multiplayer desktop chess with a shared game state, move validation and checkmate detection. | Java · Swing · RMI |
 
-- machine learning systems,
-- quantitative research infrastructure,
-- data validation and reproducibility,
-- high-performance computing,
-- full-stack products that real people can use.
+## `~/toolkit` · Languages and tools
 
-My current focus is learning how to build software that does not just produce
-nice-looking results, but can also explain where those results came from and
-why they should or should not be trusted.
+- **Application development** · C# / .NET, Java, C / C++, TypeScript, JavaScript
+- **Computer vision and data** · OpenCV, Emgu CV, Python, pandas, SQL
+- **Web and integration** · Next.js, Supabase, PostgreSQL, REST APIs
+- **Development tools** · Git, Linux
 
----
-
-## Flagship project
-
-### [Adaptive Equity Trading Lab](https://github.com/PerfectPoH/adaptive-equity-trading-lab)
-
-A research infrastructure for falsifiable equity-strategy experiments.
-
-This is not a trading bot and not a promoted strategy. It is a lab for testing
-whether strategy ideas survive data-quality checks, transaction costs,
-out-of-sample validation, robustness gates, provider constraints, and an audit
-trail.
-
-The project includes:
-
-- governed pre-run gates before provider queries or backtests,
-- decision ledgers and vault reports for every research outcome,
-- outlier-dependency and cost-realism gates,
-- regime-aware portfolio diagnostics,
-- Streamlit dashboards for inspecting strategies, blockers, and results,
-- a frozen monthly replication protocol for the remaining active hypothesis.
-
-**Main lesson:** the lab has promoted zero strategies so far, which is exactly
-the point. It is built to reject weak evidence before it becomes a trading
-claim.
-
-`Python` | `pandas` | `scikit-learn` | `Streamlit` | `time series` |
-`quantitative research`
-
----
-
-## Other projects
-
-### [Soresina Mercati](https://github.com/PerfectPoH/soresina-mercati)
-
-Full-stack web application for market stall booking and event management,
-built for Pro Loco Soresina and deployed in production.
-
-`Next.js` | `Supabase` | `TypeScript` | `PostgreSQL`
-
-### [Cephalometric Landmark Detector](https://github.com/PerfectPoH/cephalometric-landmark-detector)
-
-Computer-vision research prototype for detecting cephalometric landmarks from
-radiographic/profile images.
-
-`C#` | `EmguCV` | `OpenCV` | `image processing`
-
-### [Java Chess RMI](https://github.com/PerfectPoH/java-chess-rmi)
-
-Multiplayer chess application with Java RMI synchronization, legal move
-highlighting, turn handling, check/checkmate detection, and castling support.
-
-`Java` | `Swing` | `RMI`
-
----
-
-## Stack
-
-**Languages:** Python, Java, TypeScript, JavaScript, C#, C
-
-**Data / ML:** pandas, scikit-learn, time-series validation, Streamlit
-
-**Web:** Next.js, Supabase, PostgreSQL, REST APIs
-
-**Systems:** Git, testing, experiment logging, reproducible pipelines
-
----
-
-## Direction
-
-I am using my first years of university to build a foundation in computer
-science while turning serious personal projects into public case studies.
-
-The long-term goal is to work on technically demanding systems: research
-infrastructure, ML tooling, high-performance software, and products where
-correctness matters.
-
-<p align="center">
-  Crema, Italy | Politecnico di Milano
-</p>
+<p align="center"><a href="https://abedbarakat.me">More work and CV at abedbarakat.me ↗</a></p>
