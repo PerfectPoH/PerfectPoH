@@ -10,6 +10,14 @@
   <a href="mailto:abed@abedbarakat.me"><b>Email</b></a>
 </div>
 
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/ascii-portrait-dark.gif" />
+    <source media="(prefers-color-scheme: light)" srcset="assets/ascii-portrait-light.gif" />
+    <img src="assets/ascii-portrait-light.gif" alt="Abed Barakat’s animated ASCII portrait" width="480" />
+  </picture>
+</div>
+
 ## `$ ls ~/projects`
 
 <div align="center">
@@ -19,19 +27,16 @@
   <a href="https://github.com/PerfectPoH/java-chess-rmi"><img width="48%" src="assets/abed-profile-chess.png" alt="Java Chess RMI. Multiplayer desktop chess with a shared game state." /></a>
 </div>
 
+## `$ cat ~/contributions`
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PerfectPoH/PerfectPoH/profile-snake/contribution-snake-dark.svg" />
+  <img width="100%" src="https://raw.githubusercontent.com/PerfectPoH/PerfectPoH/profile-snake/contribution-snake.svg" alt="Animated snake moving across Abed's GitHub contribution calendar" />
+</picture>
+
 ## `$ cat ~/about`
 
 I study Computer Engineering at **Politecnico di Milano**, Cremona campus. At **Outside Format**, I work on cephalometric image analysis, dental 3D workflows and API integrations. I reached the final of the **Milano Agentic City Hackathon 2026**.
 
 **Languages** · C# · Java · C/C++ · TypeScript · JavaScript · Python · SQL  
 **Tools** · .NET · OpenCV / Emgu CV · Next.js · Supabase · PostgreSQL · Git · Linux
-
-<details>
-  <summary><code>$ ./portrait</code></summary>
-  <br />
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/ascii-portrait-dark.gif" />
-    <source media="(prefers-color-scheme: light)" srcset="assets/ascii-portrait-light.gif" />
-    <img src="assets/ascii-portrait-light.gif" alt="Abed Barakat’s animated ASCII portrait" width="480" />
-  </picture>
-</details>
