@@ -1,46 +1,37 @@
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/ascii-portrait-dark.gif" />
-    <source media="(prefers-color-scheme: light)" srcset="assets/ascii-portrait-light.gif" />
-    <img src="assets/ascii-portrait-light.gif" width="600" alt="Animated ASCII portrait of Abed Barakat" />
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/abed-profile-hero.png" />
+    <img src="assets/abed-profile-boot.gif" alt="Abed Alrahman Barakat. Computer Engineering at Politecnico di Milano. Freelance software developer. Open to summer 2027 internships." width="100%" />
   </picture>
+
+  <br />
+  <a href="https://abedbarakat.me"><b>Portfolio &amp; CV</b></a> ·
+  <a href="https://www.linkedin.com/in/abed-alrahman-barakat-16aa593ba"><b>LinkedIn</b></a> ·
+  <a href="mailto:abed@abedbarakat.me"><b>Email</b></a>
 </div>
 
-<h1 align="center">Abed Alrahman Barakat</h1>
+## `$ ls ~/projects`
 
-<p align="center">
-  Computer Engineering student at Politecnico di Milano · Freelance software developer
-</p>
+<div align="center">
+  <a href="https://github.com/PerfectPoH/adaptive-equity-trading-lab"><img width="48%" src="assets/abed-profile-research.png" alt="Adaptive Equity Trading Lab. Quantitative research infrastructure in Python and Streamlit." /></a>
+  <a href="https://github.com/PerfectPoH/soresina-mercati"><img width="48%" src="assets/abed-profile-market.png" alt="Soresina Mercati. Market-stall booking platform built with Next.js and Supabase." /></a>
+  <a href="https://abedbarakat.me/#/work/cephalometric-landmark-detector"><img width="48%" src="assets/abed-profile-dental.png" alt="Dental software. Private client work on cephalometric image analysis, 3D models and APIs." /></a>
+  <a href="https://github.com/PerfectPoH/java-chess-rmi"><img width="48%" src="assets/abed-profile-chess.png" alt="Java Chess RMI. Multiplayer desktop chess with a shared game state." /></a>
+</div>
 
-<p align="center">
-  <a href="https://abedbarakat.me">Portfolio</a> ·
-  <a href="https://www.linkedin.com/in/abed-alrahman-barakat-16aa593ba">LinkedIn</a> ·
-  <a href="mailto:abed@abedbarakat.me">Email</a>
-</p>
+## `$ cat ~/about`
 
-```text
-abed@portfolio:~$ whoami
-  education    Politecnico di Milano · Cremona campus
-  current      Freelance software development · Outside Format
-  interests    Computer vision, data systems, software engineering
-  milestone    Milano Agentic City Hackathon · Finalist, 2026
-  available    Summer 2027 internships
-```
+I study Computer Engineering at **Politecnico di Milano**, Cremona campus. At **Outside Format**, I work on cephalometric image analysis, dental 3D workflows and API integrations. I reached the final of the **Milano Agentic City Hackathon 2026**.
 
-## `~/projects` · Selected work
+**Languages** · C# · Java · C/C++ · TypeScript · JavaScript · Python · SQL  
+**Tools** · .NET · OpenCV / Emgu CV · Next.js · Supabase · PostgreSQL · Git · Linux
 
-| Project | What I built | Stack |
-| :-- | :-- | :-- |
-| **[Adaptive Equity Trading Lab](https://github.com/PerfectPoH/adaptive-equity-trading-lab)** · [Demo](https://lab.abedbarakat.me) | Research infrastructure for testing equity hypotheses with data-quality gates, out-of-sample validation, transaction costs and an audit trail. | Python · pandas · scikit-learn · Streamlit |
-| **[Soresina Mercati](https://github.com/PerfectPoH/soresina-mercati)** | Market-stall booking platform for Pro Loco Soresina, with an interactive map, waitlists and an admin dashboard. | Next.js · TypeScript · Supabase · PostgreSQL |
-| **Dental software** | Client work on cephalometric image analysis, dental 3D model processing and appointment API integration. | Computer vision · 3D workflows · REST APIs |
-| **[Java Chess RMI](https://github.com/PerfectPoH/java-chess-rmi)** | Multiplayer desktop chess with a shared game state, move validation and checkmate detection. | Java · Swing · RMI |
-
-## `~/toolkit` · Languages and tools
-
-- **Application development** · C# / .NET, Java, C / C++, TypeScript, JavaScript
-- **Computer vision and data** · OpenCV, Emgu CV, Python, pandas, SQL
-- **Web and integration** · Next.js, Supabase, PostgreSQL, REST APIs
-- **Development tools** · Git, Linux
-
-<p align="center"><a href="https://abedbarakat.me">More work and CV at abedbarakat.me ↗</a></p>
+<details>
+  <summary><code>$ ./portrait</code></summary>
+  <br />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/ascii-portrait-dark.gif" />
+    <source media="(prefers-color-scheme: light)" srcset="assets/ascii-portrait-light.gif" />
+    <img src="assets/ascii-portrait-light.gif" alt="Abed Barakat’s animated ASCII portrait" width="480" />
+  </picture>
+</details>
