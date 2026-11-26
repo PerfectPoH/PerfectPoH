@@ -36,7 +36,7 @@
 
 ## `$ cat ~/about`
 
-I study Computer Engineering at **Politecnico di Milano**, Cremona campus. At **Outside Format**, I work on cephalometric image analysis, dental 3D workflows and API integrations. I reached the final of the **Milano Agentic City Hackathon 2026**.
+I study Computer Engineering at **Politecnico di Milano**, Cremona campus. At **Outside Format**, I work on cephalometric image analysis, dental 3D workflows and API integrations. My team placed 10th at the **Milano Agentic City Hackathon 2026**.
 
 **Languages** · C# · Java · C/C++ · TypeScript · JavaScript · Python · SQL  
 **Tools** · .NET · OpenCV / Emgu CV · Next.js · Supabase · PostgreSQL · Git · Linux
